@@ -23,7 +23,7 @@ $connection = $db->connect();
             <div class="logo">
             <img class="avatar" src="./img/images.png" alt="logo">     
             <h1>Registrarse</h1>
-            <form action="http://localhost/Techno_Solutions/validar.php" method="POST">
+            <form action="validar.php" method="POST">
                 <div class="row">
                     <div class="col-6">
                         <label for="nombre">Nombre</label>
