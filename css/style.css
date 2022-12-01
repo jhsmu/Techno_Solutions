@@ -86,25 +86,181 @@ a{
     color: #fff;
     font-size: 25px;
 }
-
+.encabezado1{
+    padding: 0 50px;
+    background: rgb(27, 213, 254,.5);
+}
 #navegacion{
     background: #1bd5fe;
 }
 .cuerpo{
 margin: 60px;
-padding: 60px;
-margin-left: 320px;
+padding: 0px 60px;
+margin-left: 280px;
+
 
 }
 .carusel{
-    margin-top: 25px;
+    margin-left: 350px;
+    bottom: 20px;
     width: 75rem;
+    right: 15em;
 }
 #caruselimagen{
     height: 650px;
     border-radius: 20px;
 }
-#vidio{
-    margin-top: 15px;
-    width: 450px;
+.card{
+    width: 350px;
+    
+}
+.btn{
+    background: #141254;
+    color: #fff;
+}
+.btn:hover{
+    background: #1bd5fe;
+}
+video{
+    width: 75%;
+    padding: 15px;
+}
+
+/* pie de pagina */
+.pie-pagina{
+    width: 100%;
+    background-color: #1bd5fe;
+}
+.pie-pagina .grupo1{
+    width: 100%;
+    max-width: 12000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo1 .box figure img{
+    width: 200px;
+    border-radius: 100px;
+}
+.pie-pagina .grupo1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+.pie-pagina .grupo1 .box p {
+    color: #fbf8fe;
+    margin-bottom: 15px;
+}
+.pie-pagina .grupo1 .redes a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #141254;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo1 .redes a:hover {
+    color: #0f1aab
+}
+.pie-pagina .grupo2{
+    background-color: #141254;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo2 small{
+    font-size: 20px;
+}
+/* slider card */
+.swiper{
+    width: 100%;
+}
+.swiper-wrapper{
+    width: 100%;
+    height: 35em;
+    display: flex;
+    align-items: center;
+}
+.card_cont{
+    width: 20em;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 2em;
+    box-shadow: 0 0 2em rgb(0, 0, 0,.2);
+    padding: 2em 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 2em;
+}
+.card_image{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 5px solid black;
+
+}
+.card_image img{
+    width: 100%;
+    height: 100%;
+    border-radius:50%;
+    object-fit: cover;
+ 
+}
+.card_contenido{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.card_titulo{
+    font-size: 1.5em;
+    font-weight: 500;
+    position: relative;
+    top: .2em;
+}
+.card_nombre{
+    color: black;
+}
+.card_texto{
+    text-align: center;
+    font-size: 1.1em;
+    margin:  1em 0;
+}
+.card_btn{
+    background-color: #141254;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    padding: .5em;
+    border-radius: .5em;
+    margin-top: .5em;
+    cursor: pointer;
+}
+
+/* responsive */
+@media screen and (max-width:800px){
+    .pie-pagina .grupo1{
+        width: 90%;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 50px;
+        padding: 35px 0px;
+    }
 }
