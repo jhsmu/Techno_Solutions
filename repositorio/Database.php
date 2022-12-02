@@ -56,6 +56,13 @@
             return $statement->fetch();
         }
 
+        private function consultarListaConCondicion($query, $parametrosCondicion) {
+            $connection = $this->conectar();
+            $statement = $connection->prepare($query);
+            $statement->execute($parametrosCondicion);
+            return $statement->fetchAll();
+        }
+
         // FUNCIONES PARA EL MANEJO DEL USUARIO
 
         public function registrarUsuario($nombre, $usuario, $documento, $correo, $clave, $telefono, $direccion) {
@@ -74,6 +81,23 @@
         public function consultarProductos() {
             $query = "SELECT * FROM productos";
             return $this->consultar($query);
+        }
+
+        // FUNCIONES PARA EL MANEJO DEL CARRITO
+
+        public function agregarProductoAlCarrito($idUsuario, $idProducto, $cantidad) {
+            $query = "INSERT INTO carrito (id_usuario, id_producto, cantidad) VALUES(?,?,?)";
+            $data = [$idUsuario, $idProducto, $cantidad];
+            $this->insertar($query, $data);
+        }
+
+        public function consultarCarrito($idUsuario) {
+
+            $query = "SELECT p.id, p.nombre, c.cantidad, p.precio as 'precio_unitario' ,(p.precio * c.cantidad) as 'precio_total' 
+                FROM carrito as c
+                JOIN productos as p on c.id_producto = p.id
+                WHERE c.id_usuario = ?";
+            return $this->consultarListaConCondicion($query, [$idUsuario]);;
         }
     }
 ?>

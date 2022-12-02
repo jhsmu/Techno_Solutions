@@ -19,14 +19,18 @@
 
             $lista .= "
             <div class='col-md-6'>
-                <div class='card'>
-                    <img src='". $producto['imagen'] ."' class='responsive image' alt='...'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>". $producto['nombre'] ."</h5>
-                        <p class='card-text'>". $producto['descripcion'] ."</p>
-                        <a href=' class='btn'>Agregar al Carrito</a>
-                    </div>
-                </div>
+                <form action='./controladores/agregarProductoAlCarrito.php' method='POST'>
+                    <div class='card'>
+                        <img src='". $producto['imagen'] ."' class='responsive image' alt='...'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>". $producto['nombre'] ."</h5>
+                            <p class='card-text'>". $producto['descripcion'] ."</p>
+                            <button class='btn'>Agregar al Carrito</button>
+                            <input type='number' name='cantidad' placeholder='cantidad' min='1'> 
+                            <input type='text' name='idProducto' style='display:none' value='". $producto['id'] ."'> 
+                        </div>
+                    </div> 
+                </form>
             </div>
             ";
 
