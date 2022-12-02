@@ -24,10 +24,9 @@
         </div>
         <div class="card_contenido">
           <span class="card_titulo">Desarrollador</span>
-          <span class="card_nombre">Leandro Pastor</span>
+          <span class="card_nombre">Jhonatan Esmith Mena Urrutia</span>
           <p class="card_texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eaque cumque. Provident tempora amet explicabo tenetur, voluptate vitae quos natus culpa atque dignissimos minima. Quas?
-          </p>
+            Estudiante de programación en el centro de servicio y gestión empresarial SENA</p>
           <button class="card_btn">Ver más</button>
         </div>
       </div>
@@ -38,24 +37,10 @@
         </div>
         <div class="card_contenido">
           <span class="card_titulo">Gestor De Base de Datos</span>
-          <span class="card_nombre">Freymer Sepulveda</span>
+          <span class="card_nombre"> Miguel Angel Duque Cuervo</span>
           <p class="card_texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eaque cumque. Provident tempora amet explicabo tenetur, voluptate vitae quos natus culpa atque dignissimos minima. Quas?
-          </p>
-          <button class="card_btn">Ver más</button>
-        </div>
-      </div>
-
-      <div class="card_cont swiper-slide">
-        <div class="card_image ">
-          <img src="./img/avatar.png" alt="">
-        </div>
-        <div class="card_contenido">
-          <span class="card_titulo">Diseño Grafico</span>
-          <span class="card_nombre">Susana </span>
-          <p class="card_texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eaque cumque. Provident tempora amet explicabo tenetur, voluptate vitae quos natus culpa atque dignissimos minima. Quas?
-          </p>
+          Estudiante de programación en el centro de servicio y gestión empresarial SENA
+        </p>
           <button class="card_btn">Ver más</button>
         </div>
       </div>

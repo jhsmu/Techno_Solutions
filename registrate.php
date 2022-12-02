@@ -61,7 +61,7 @@
             </div>
 
             <button type="submit">Registrarse</button>
-            <a href="login.php" class="btn btn-info">Iniciar Sesion</a>
+            <a href="login.php">Iniciar Sesion</a>
         </form>
 
         <!-- JavaScript Bundle with Popper -->
@@ -69,3 +69,5 @@
 </body>
 
 </html>
+
+

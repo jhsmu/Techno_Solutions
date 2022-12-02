@@ -14,11 +14,9 @@
 
     <?php require("./componentes/header.php") ?>
 
-    <section class="cuerpo">
-        <div class="section">
-            <?php require("./controladores/consultarCarrito.php") ?>
-        </div>
-    </section>
+    <div class="container" style="margin: 1em;">
+        <?php require("./controladores/consultarCarrito.php") ?>
+    </div>
 
     <?php require("./componentes/footer.php") ?>
 

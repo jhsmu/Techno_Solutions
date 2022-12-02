@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
- 
+
 
 </head>
 
@@ -14,19 +14,17 @@
 
   <?php require("./componentes/header.php") ?>
 
-  <section class="cuerpo">
-    <div class="section">
-      <?php require("./controladores/consultarProductos.php") ?>
-    </div>
+  <div class="container">
+    <?php require("./controladores/consultarProductos.php") ?>
 
     <!-- video -->
-    <video src="./video/Asus Rog elite  Animated Wallpaper 1080p.mp4" controls autoplay loop></video>
+    <div style="margin: 3em;">
+      <video src="./video/Asus Rog elite  Animated Wallpaper 1080p.mp4" controls autoplay loop style="width: 100%;"></video>
+    </div>
 
-  </section>
+  </div>
 
   <?php require("./componentes/footer.php") ?>
-
-  
 
 </body>
 
