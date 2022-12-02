@@ -19,11 +19,22 @@
         
     $sesion =  new Session();
     $idUsuario = $sesion->obtenerIdUsuario();
-    
-    $db = new Database();
-    $resultado = $db->agregarProductoAlCarrito($idUsuario, $idProducto, $cantidad);
 
-    header("Location: ../producto.php?alerta=Se agregó el producto al carrito");
+    $db = new Database();
+    $resultado = $db->consultarProductoEnCarrito($idUsuario, $idProducto);
+
+    if(!$validador->validarDatos($resultado)) {
+        $db->agregarProductoAlCarrito($idUsuario, $idProducto, $cantidad);
+        header("Location: ../producto.php?alerta=Se agregó el producto al carrito");
+        return;
+    }
+
+    $nuevaCantidad = $resultado["cantidad"] + $cantidad;
+    $seActualizo = $db->actualizarProductoEnCarrito($resultado["id"], $nuevaCantidad);
+
+    $mensaje = $seActualizo ? "?alerta=Se agregó el producto al carrito" : "?mensaje=Ocurrió un error al agregar el producto al carrito, por favor intentalo";
+
+    header("Location: ../producto.php".$mensaje);
     exit();
 
    } catch (Exception $e){

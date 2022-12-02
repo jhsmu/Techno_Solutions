@@ -5,6 +5,8 @@
 
             if(!is_array($datos)) return !empty($datos);
 
+            if(sizeof($datos) == 0) return 0;
+
             foreach($datos as $item) {
                 if(!isset($item) || empty($item)) return false;
             }

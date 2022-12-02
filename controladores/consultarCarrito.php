@@ -10,7 +10,10 @@
 
         $productos = $db->consultarCarrito($idUsuario);
 
-        if(!$validador->validarDatos($productos)) return;
+        if(!$validador->validarDatos($productos)) {
+            header("Location: producto.php?mensaje=Aún no has agregado productos al carrito");
+            return;
+        }
     
         $lista = "";
         $precioTotal = 0;
@@ -27,7 +30,7 @@
                                 <p class='card-text'>Precio unitario: ". $producto['precio_unitario'] ."</p>
                                 <p class='card-text'>Precio unitario: ". $producto['precio_total'] ."</p>
                                 <button class='btn'>Eliminar</button>
-                                <input type='text' name='idProducto' style='display:none' value='". $producto['id'] ."'> 
+                                <input type='text' name='idCarrito' style='display:none' value='". $producto['id'] ."'> 
                             </div>
                         </div> 
                     </form>
@@ -42,6 +45,6 @@
 
         echo $lista;
     } catch (Exception $e) {
-        echo $e->getMessage();
+        header("Location: ../carrito.php?mensaje=Ocurrió un error inesperado");
     }   
 ?>

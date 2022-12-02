@@ -49,6 +49,13 @@
             $statement->execute($data);
         }
 
+        private function actualizar($query, $data) {
+            $connection = $this->conectar();
+            $statement = $connection->prepare($query);
+            $statement->execute($data);
+            return $statement->rowCount() > 0;
+        }
+
         private function consultarConCondicion($query, $parametrosCondicion) {
             $connection = $this->conectar();
             $statement = $connection->prepare($query);
@@ -85,19 +92,36 @@
 
         // FUNCIONES PARA EL MANEJO DEL CARRITO
 
+        public function consultarProductoEnCarrito($idUsuario, $idProducto) {
+            $query = "SELECT id, cantidad FROM carrito WHERE id_usuario = ? AND id_producto = ?";
+            $data = [$idUsuario, $idProducto];
+            return $this->consultarConCondicion($query, $data);
+        }
+
+        public function consultarCarrito($idUsuario) {
+            $query = "SELECT c.id, p.nombre, c.cantidad, p.precio as 'precio_unitario' ,(p.precio * c.cantidad) as 'precio_total' 
+                FROM carrito as c
+                JOIN productos as p on c.id_producto = p.id
+                WHERE c.id_usuario = ?";
+            return $this->consultarListaConCondicion($query, [$idUsuario]);;
+        }
+
         public function agregarProductoAlCarrito($idUsuario, $idProducto, $cantidad) {
             $query = "INSERT INTO carrito (id_usuario, id_producto, cantidad) VALUES(?,?,?)";
             $data = [$idUsuario, $idProducto, $cantidad];
             $this->insertar($query, $data);
         }
 
-        public function consultarCarrito($idUsuario) {
+        public function actualizarProductoEnCarrito($idCarrito, $cantidad) {
+            $query = "UPDATE carrito SET cantidad = ? WHERE id = ?";
+            $data = [$cantidad, $idCarrito];
+            return $this->actualizar($query, $data);
+        }
 
-            $query = "SELECT p.id, p.nombre, c.cantidad, p.precio as 'precio_unitario' ,(p.precio * c.cantidad) as 'precio_total' 
-                FROM carrito as c
-                JOIN productos as p on c.id_producto = p.id
-                WHERE c.id_usuario = ?";
-            return $this->consultarListaConCondicion($query, [$idUsuario]);;
+    
+        public function eliminarProductoDelCarrito($idCarrito) {
+            $query = "DELETE FROM carrito WHERE id = ?";
+            $this->borrar($query, [$idCarrito]);;
         }
     }
 ?>
