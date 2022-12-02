@@ -17,14 +17,7 @@
     <section class="cuerpo">
         <div class="section">
             <?php require("./controladores/consultarCarrito.php") ?>
-
-            <form action="" method="POST">
-                <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="Pagar">
-                </div>
-            </form>  
         </div>
-
     </section>
 
     <?php require("./componentes/footer.php") ?>

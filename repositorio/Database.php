@@ -121,7 +121,12 @@
     
         public function eliminarProductoDelCarrito($idCarrito) {
             $query = "DELETE FROM carrito WHERE id = ?";
-            $this->borrar($query, [$idCarrito]);;
+            $this->borrar($query, [$idCarrito]);
+        }
+
+        public function vaciarCarrito($idUsuario) {
+            $query = "DELETE FROM carrito WHERE id_usuario = ?";
+            $this->borrar($query, [$idUsuario]);;
         }
     }
 ?>

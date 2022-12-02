@@ -20,7 +20,7 @@
     <div class="swiper-wrapper">
       <div class="card_cont swiper-slide">
         <div class="card_image ">
-          <img src="" alt="Leandro">
+          <img src="./img/avatar.png" alt="">
         </div>
         <div class="card_contenido">
           <span class="card_titulo">Desarrollador</span>
@@ -28,13 +28,13 @@
           <p class="card_texto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eaque cumque. Provident tempora amet explicabo tenetur, voluptate vitae quos natus culpa atque dignissimos minima. Quas?
           </p>
-          <button class="card_btn">View More</button>
+          <button class="card_btn">Ver más</button>
         </div>
       </div>
 
       <div class="card_cont swiper-slide">
         <div class="card_image ">
-          <img src="" alt="Leandro">
+          <img src="./img/avatar.png" alt="">
         </div>
         <div class="card_contenido">
           <span class="card_titulo">Gestor De Base de Datos</span>
@@ -42,13 +42,13 @@
           <p class="card_texto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eaque cumque. Provident tempora amet explicabo tenetur, voluptate vitae quos natus culpa atque dignissimos minima. Quas?
           </p>
-          <button class="card_btn">View More</button>
+          <button class="card_btn">Ver más</button>
         </div>
       </div>
 
       <div class="card_cont swiper-slide">
         <div class="card_image ">
-          <img src="" alt="Leandro">
+          <img src="./img/avatar.png" alt="">
         </div>
         <div class="card_contenido">
           <span class="card_titulo">Diseño Grafico</span>
@@ -56,7 +56,7 @@
           <p class="card_texto">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eaque cumque. Provident tempora amet explicabo tenetur, voluptate vitae quos natus culpa atque dignissimos minima. Quas?
           </p>
-          <button class="card_btn">View More</button>
+          <button class="card_btn">Ver más</button>
         </div>
       </div>
 

@@ -15,11 +15,11 @@
             return;
         }
     
-        $lista = "";
+        $html = "";
         $precioTotal = 0;
 
         foreach($productos as $producto) {
-            $lista .= "
+            $html .= "
             <div class='row'>
                 <div class='col-md-12'>
                     <form action='./controladores/eliminarProductoDelCarrito.php' method='POST'>
@@ -41,10 +41,18 @@
             $precioTotal += $producto['precio_total'];
         }
         
-        $lista .= "<p>El precio total es $precioTotal</p>";
+        $html .= "<p>El precio total es $precioTotal</p>";
 
-        echo $lista;
+        $html .= "
+        <form action='./controladores/finalizarCompra.php' method='POST'>
+            <div class='form-group'>
+                <input type='submit' class='btn btn-success' value='Pagar'>
+                <input type='text' style='display:none' value='$precioTotal' name='valorTotal'>
+            </div>
+        </form>";
+
+        echo $html;
     } catch (Exception $e) {
-        header("Location: ../carrito.php?mensaje=Ocurrió un error inesperado");
+        header("Location: ../producto.php?mensaje=Ocurrió un error inesperado");
     }   
 ?>
