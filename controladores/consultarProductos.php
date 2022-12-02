@@ -15,33 +15,37 @@
 
         foreach($productos as $producto) {
 
-            if($contador == 0) $lista .= "<div class='row'>";
-
+            if($contador == 0) $lista .= "<div class='row mt-5'>";
+            
             $lista .= "
-            <div class='col-md-6'>
+            <div class='col-md-4'>
                 <form action='./controladores/agregarProductoAlCarrito.php' method='POST'>
                     <div class='card'>
-                        <img src='". $producto['imagen'] ."' class='responsive image' alt='...'>
+                        <img src='". $producto['imagen'] ."' class='' style='witdh:200px; height:250px;,object-fit: contain;' alt='...'>
                         <div class='card-body'>
                             <h5 class='card-title'>". $producto['nombre'] ."</h5>
                             <p class='card-text'>". $producto['descripcion'] ."</p>
-                            <button class='btn'>Agregar al Carrito</button>
-                            <input type='number' name='cantidad' placeholder='cantidad' min='1'> 
-                            <input type='text' name='idProducto' style='display:none' value='". $producto['id'] ."'> 
+                            <div class='row'>
+                                <div class='col-md-5'>
+                                    <input type='number' name='cantidad' placeholder='cantidad' min='1' class='form-control'> 
+                                    <input type='text' name='idProducto' style='display:none' value='". $producto['id'] ."'>    
+                                </div>
+                                <button class='btn col-md-6'>Agregar al Carrito</button>
+                            </div>
                         </div>
                     </div> 
                 </form>
-            </div>
-            ";
-
+            </div>";
+            
             $contador++;
             
-            if($contador == 2) {
+            if($contador == 3) {
                 $lista .= "</div>";
                 $contador = 0;
             }
         }
     
+        $lista .= "</div>";    
         echo $lista;
     } catch (Exception $e) {
         echo $e->getMessage();

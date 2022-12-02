@@ -19,29 +19,52 @@
         $precioTotal = 0;
 
         foreach($productos as $producto) {
+
             $html .= "
+            <form action='./controladores/eliminarProductoDelCarrito.php' method='POST'>
             <div class='row'>
                 <div class='col-md-12'>
-                    <form action='./controladores/eliminarProductoDelCarrito.php' method='POST'>
-                        <div class='card'>
-                            <div class='card-body'>
-                                <h5 class='card-title'>Nombre: ". $producto['nombre'] ."</h5>
-                                <p class='card-text'>Cantidad: ". $producto['cantidad'] ."</p>
-                                <p class='card-text'>Precio unitario: ". $producto['precio_unitario'] ."</p>
-                                <p class='card-text'>Precio unitario: ". $producto['precio_total'] ."</p>
-                                <button class='btn'>Eliminar</button>
-                                <input type='text' name='idCarrito' style='display:none' value='". $producto['id'] ."'> 
-                            </div>
-                        </div> 
-                    </form>
+                    
+                <div class='row'>
+                <div class='col-md-11>
+                    <h5 class='card-title'>Nombre: ". $producto['nombre'] ."</h5>
                 </div>
-            </row>
+
+                <div class='col-md-1'>
+                    <input type='text' name='idCarrito' style='display:none' value='". $producto['id'] ."'> 
+                </div>
+            </div>
+
+            <div class='row'>
+            <div class='col-md-12'>
+                <p class='card-text'>Cantidad: ". $producto['cantidad'] ."</p>
+            </div>
+            </div>
+
+            <div class='row'>
+                <div class='col-md-5'>
+                    <p class='card-text'>Precio unitario: ".  $producto['precio_unitario'] ."</p>
+                </div>
+
+                <div class='col-md-5'>
+                    <p class='card-text'>Precio total: ".  $producto['precio_total'] ."</p>
+                </div>
+
+                <div class='col-md-2'>
+                    <button class='btn'>Eliminar</button>
+                </div>
+            </div>
+                   
+                </div>
+            </div>
+            </form>
+            <hr class='hr'/>
             ";
 
             $precioTotal += $producto['precio_total'];
         }
         
-        $html .= "<p>El precio total es $precioTotal</p>";
+        $html .= "<p>El precio total es $$precioTotal</p>";
 
         $html .= "
         <form action='./controladores/finalizarCompra.php' method='POST'>

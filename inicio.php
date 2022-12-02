@@ -12,49 +12,50 @@
 <body>
   <?php require("./componentes/header.php") ?>
 
-  <section class="cuerpo">
-    <div class="contenido">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <!-- Primer inicio -->
-        <div class="col" style="width: 400px;" id="enunciado">
-          <div class="card">
-            <img src="./img/productos/equipos/imagen-pc_gamer_ryzen_3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pc Gamer Ryzen 5 </h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Segundo inicio -->
-        <div class="col" style="width: 400px;" id="enunciado">
-          <div class="card">
-            <img src="./img/productos/equipos/imagen-pc_gamer_ryzen_5.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pc Gamer Ryzen 5 5600</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Tercera inicio -->
 
-        <div class="col" style="width: 400px; height: 200px;" id="enunciado">
-          <div class="card">
-            <img src="./img/productos/equipos/imagen-pc_gamer_ryzen_5_3600.png" class="card-img-top" alt="..." style="width: 
-            280px;">
-            <div class="card-body">
-              <h5 class="card-title">Pc Gamer Ryzen 5 3600</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+
+
+  <div class="container">
+
+    <div class="row" style="margin-top: 2em;margin-bottom: 2em;">
+
+    <!-- Primero, inicio -->
+      <div class="col-md-4" id="enunciado">
+        <div class="card">
+          <img src="./img/productos/equipos/imagen-pc_gamer_ryzen_3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pc Gamer Ryzen 5 </h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
       </div>
+
+
+      <!-- Segundo inicio -->
+      <div class="col-md-4" id="enunciado">
+        <div class="card">
+          <img src="./img/productos/equipos/imagen-pc_gamer_ryzen_5.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Pc Gamer Ryzen 5 5600</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tercero inicio -->
+      <div class="col-md-4" id="enunciado">
+        <div class="card">
+          <img src="./img/productos/equipos/imagen-pc_gamer_ryzen_5_3600.png" class="card-img-top" alt="..." style="width: 280px;">
+          <div class="card-body">
+            <h5 class="card-title">Pc Gamer Ryzen 5 3600</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <!-- Carrusel -->
-  <div class="carusel">
-
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="false">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="false" style="margin-top: 2em;margin-bottom: 2em;">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -105,12 +106,18 @@
       </button>
     </div>
 
+
+  </div>
+
+
+  </div>
+
   </div>
 
   <?php require("./componentes/footer.php") ?>
 
   <script>
-    const myCarouselElement = document.querySelector('#myCarousel')
+    const myCarouselElement = document.querySelector('.carousel')
     const carousel = new bootstrap.Carousel(myCarouselElement, {
       interval: 2000,
       wrap: false
