@@ -68,5 +68,12 @@
             $query = "SELECT * FROM usuarios WHERE usuario = ? AND clave = ? ";
             return $this->consultarConCondicion($query, [$usuario , $clave]);
         }
+
+        // FUNCIONES PARA EL MANEJO DE LOS PRODUCTOS
+
+        public function consultarProductos() {
+            $query = "SELECT * FROM productos";
+            return $this->consultar($query);
+        }
     }
 ?>

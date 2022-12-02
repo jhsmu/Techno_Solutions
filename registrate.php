@@ -13,6 +13,7 @@
 
 <body>
 
+    <?php require("./validaciones/validarSesionEnRegistro.php"); ?>    
     <?php require("./validaciones/validarError.php"); ?>
 
     <header class="encabezado">
@@ -60,7 +61,7 @@
             </div>
 
             <button type="submit">Registrarse</button>
-            <a href="http://localhost/Techno_Solutions/login.html">Iniciar Sesion</a>
+            <a href="login.php" class="btn btn-info">Iniciar Sesion</a>
         </form>
 
         <!-- JavaScript Bundle with Popper -->

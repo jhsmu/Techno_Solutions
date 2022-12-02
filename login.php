@@ -13,7 +13,9 @@
 </head>
 
 <body>
+    <?php require("./validaciones/validarSesionEnRegistro.php"); ?>
     <?php require("./validaciones/validarError.php"); ?>
+
     <header class="encabezado">
     </header>
     <div class="logo">
